@@ -19,7 +19,6 @@ def get_args():
 
     return args
 
-
 def fibonacci(n):
     # initialize the variables for calculating the Fibonacci number at this position in the sequence
     a, b = 0, 1
@@ -34,7 +33,10 @@ def fibonacci(n):
 
 def print_number(n, fibonacci_number):
     # print the output
-    print('The Fibonacci number for', n, 'is:', fibonacci_number)
+    if args.verbose:
+        print('The Fibonacci number for', n, 'is:', fibonacci_number)
+    else:
+        print(fibonacci_number)
 
 def main():
     calculated_fibonacci = fibonacci(args.num)
